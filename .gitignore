@@ -1,2 +1,36 @@
-/Photos
-/ProjectRawPhotos
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Environment
+backend/.env
+.env
+
+# Output & uploads
+backend/uploads/
+backend/output/
+backend/logs/
+
+# Build
+frontend/.next/
+frontend/out/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+*.psd
+test_*.py
+test_*.psd
+
+# Project data
+Photos/
+ProjectRawPhotos/
