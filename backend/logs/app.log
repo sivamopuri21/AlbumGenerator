@@ -1,0 +1,580 @@
+2026-05-09 23:15:14,832 [INFO] app.main (main.py:96): POST /api/psd/analyze
+2026-05-09 23:15:14,834 [WARNING] app.main (main.py:100): POST /api/psd/analyze -> 401
+2026-05-09 23:15:37,161 [INFO] app.main (main.py:96): OPTIONS /api/auth/login
+2026-05-09 23:15:37,166 [INFO] app.main (main.py:96): POST /api/auth/login
+2026-05-09 23:15:37,170 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-09 23:15:42,348 [INFO] app.main (main.py:96): POST /api/psd/analyze
+2026-05-09 23:15:48,710 [INFO] app.main (main.py:96): GET /api/psd/preview/451648c0
+2026-05-09 23:15:48,711 [WARNING] app.main (main.py:100): GET /api/psd/preview/451648c0 -> 401
+2026-05-09 23:16:02,605 [INFO] app.main (main.py:96): POST /api/psd/analyze
+2026-05-09 23:16:07,644 [INFO] app.main (main.py:96): GET /api/psd/preview/d62713e9
+2026-05-09 23:16:07,644 [WARNING] app.main (main.py:100): GET /api/psd/preview/d62713e9 -> 401
+2026-05-09 23:17:46,407 [INFO] app.main (main.py:102): GET /api/health
+2026-05-09 23:20:08,043 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-09 23:20:08,049 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-09 23:20:08,052 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 401
+2026-05-09 23:21:55,936 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-09 23:21:55,938 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-09 23:22:00,920 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-09 23:22:07,855 [INFO] app.main (main.py:102): GET /api/psd/preview/7bb052f0
+2026-05-09 23:22:28,638 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-09 23:22:28,643 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-09 23:22:33,399 [INFO] app.main (main.py:102): GET /api/psd/result/3fed2f9e
+2026-05-09 23:23:04,028 [INFO] app.main (main.py:102): GET /api/psd/result-psd/3fed2f9e
+2026-05-09 23:23:04,029 [WARNING] app.main (main.py:106): GET /api/psd/result-psd/3fed2f9e -> 401
+2026-05-09 23:23:07,058 [INFO] app.main (main.py:102): OPTIONS /api/psd/result/3fed2f9e
+2026-05-09 23:23:07,062 [INFO] app.main (main.py:102): GET /api/psd/result/3fed2f9e
+2026-05-09 23:23:09,534 [INFO] app.main (main.py:102): GET /api/psd/result-psd/3fed2f9e
+2026-05-09 23:23:09,535 [WARNING] app.main (main.py:106): GET /api/psd/result-psd/3fed2f9e -> 401
+2026-05-09 23:23:11,336 [INFO] app.main (main.py:102): OPTIONS /api/psd/download-all-pdf
+2026-05-09 23:23:11,339 [INFO] app.main (main.py:102): POST /api/psd/download-all-pdf
+2026-05-09 23:23:11,341 [WARNING] app.main (main.py:106): POST /api/psd/download-all-pdf -> 404
+2026-05-09 23:25:22,978 [INFO] app.main (main.py:102): GET /api/psd/result-psd/3fed2f9e
+2026-05-09 23:25:22,979 [WARNING] app.main (main.py:106): GET /api/psd/result-psd/3fed2f9e -> 401
+2026-05-09 23:25:25,032 [INFO] app.main (main.py:102): POST /api/psd/download-all-pdf
+2026-05-09 23:25:25,036 [WARNING] app.main (main.py:106): POST /api/psd/download-all-pdf -> 404
+2026-05-09 23:25:34,023 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-09 23:25:34,025 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-09 23:25:48,468 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-09 23:26:25,150 [INFO] app.main (main.py:102): GET /api/health
+2026-05-09 23:27:03,683 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-09 23:27:03,686 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-09 23:27:03,689 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-09 23:27:09,144 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-09 23:27:16,069 [INFO] app.main (main.py:102): GET /api/psd/preview/a2a19c85
+2026-05-09 23:27:33,880 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-09 23:27:38,585 [INFO] app.main (main.py:102): GET /api/psd/result/6623d09c
+2026-05-09 23:27:41,957 [INFO] app.main (main.py:102): OPTIONS /api/psd/result-psd/6623d09c
+2026-05-09 23:27:41,960 [INFO] app.main (main.py:102): GET /api/psd/result-psd/6623d09c
+2026-05-09 23:27:50,273 [INFO] app.main (main.py:102): POST /api/psd/download-all-pdf
+2026-05-09 23:32:00,874 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-09 23:32:00,876 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-09 23:34:54,971 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-09 23:34:54,973 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-09 23:35:33,062 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-09 23:35:33,064 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-09 23:35:36,474 [INFO] app.main (main.py:102): GET /api/health
+2026-05-09 23:38:26,457 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-09 23:38:26,458 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-09 23:40:44,959 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-09 23:40:44,963 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-09 23:40:44,969 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-09 23:40:44,971 [WARNING] app.main (main.py:106): GET /api/storage/info -> 401
+2026-05-09 23:40:44,974 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-09 23:40:44,976 [WARNING] app.main (main.py:106): GET /api/storage/info -> 401
+2026-05-09 23:41:02,044 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-09 23:41:02,046 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-09 23:41:04,287 [INFO] app.main (main.py:102): GET /api/health
+2026-05-09 23:42:28,478 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-09 23:42:28,481 [WARNING] app.main (main.py:106): GET /api/storage/info -> 401
+2026-05-09 23:42:28,489 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-09 23:42:28,490 [WARNING] app.main (main.py:106): GET /api/storage/info -> 401
+2026-05-09 23:42:52,163 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-09 23:42:52,171 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-09 23:42:52,172 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 401
+2026-05-10 09:46:54,208 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-10 09:46:54,213 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 09:46:54,221 [WARNING] app.routes.auth (auth.py:40): Failed login attempt: admin
+2026-05-10 09:46:54,223 [WARNING] app.main (main.py:106): POST /api/auth/login -> 401
+2026-05-10 09:47:01,613 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 09:47:01,617 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 09:47:11,309 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-10 09:47:11,315 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 09:47:16,554 [INFO] app.main (main.py:102): GET /api/psd/preview/9f899915
+2026-05-10 09:47:50,070 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-10 09:47:50,081 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 09:47:57,009 [INFO] app.main (main.py:102): GET /api/psd/result/a4bc927d
+2026-05-10 09:48:11,719 [INFO] app.main (main.py:102): OPTIONS /api/psd/result/a4bc927d
+2026-05-10 09:48:11,797 [INFO] app.main (main.py:102): GET /api/psd/result/a4bc927d
+2026-05-10 09:48:14,232 [INFO] app.main (main.py:102): OPTIONS /api/psd/result-psd/a4bc927d
+2026-05-10 09:48:14,236 [INFO] app.main (main.py:102): GET /api/psd/result-psd/a4bc927d
+2026-05-10 09:48:20,692 [INFO] app.main (main.py:102): OPTIONS /api/psd/download-all-pdf
+2026-05-10 09:48:20,696 [INFO] app.main (main.py:102): POST /api/psd/download-all-pdf
+2026-05-10 09:49:31,208 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 09:49:32,665 [ERROR] app.main (main.py:111): Unhandled exception on POST /api/psd/analyze:
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Projects\AlbumGenerator\backend\app\main.py", line 104, in log_requests
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Python314\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Projects\AlbumGenerator\backend\app\main.py", line 96, in auth_middleware
+    |     return await call_next(request)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    |     await self.simple_response(scope, receive, send, request_headers=headers)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    |     await self.app(scope, receive, send)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    |     return await dependant.call(**values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Projects\AlbumGenerator\backend\app\routes\jobs.py", line 93, in analyze_psd_file
+    |     psd = PSDImage.open(str(psd_path))
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\psd_tools\api\psd_image.py", line 223, in open
+    |     self = cls(PSD.read(f, **kwargs))
+    |                ~~~~~~~~^^^^^^^^^^^^^
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\psd_tools\psd\document.py", line 80, in read
+    |     header = FileHeader.read(fp)
+    |   File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\psd_tools\psd\header.py", line 83, in read
+    |     return cls(*read_fmt(cls._FORMAT, fp))
+    |   File "<attrs generated methods psd_tools.psd.header.FileHeader>", line 36, in __init__
+    |     _setattr('color_mode', __attr_converter_color_mode(color_mode))
+    |                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+    |   File "C:\Python314\Lib\enum.py", line 708, in __call__
+    |     return cls.__new__(cls, value)
+    |            ~~~~~~~~~~~^^^^^^^^^^^^
+    |   File "C:\Python314\Lib\enum.py", line 1193, in __new__
+    |     raise ve_exc
+    | ValueError: 3340 is not a valid ColorMode
+    +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\AlbumGenerator\backend\app\main.py", line 104, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\AlbumGenerator\backend\app\main.py", line 96, in auth_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\AlbumGenerator\backend\app\routes\jobs.py", line 93, in analyze_psd_file
+    psd = PSDImage.open(str(psd_path))
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\psd_tools\api\psd_image.py", line 223, in open
+    self = cls(PSD.read(f, **kwargs))
+               ~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\psd_tools\psd\document.py", line 80, in read
+    header = FileHeader.read(fp)
+  File "C:\Projects\AlbumGenerator\.venv\Lib\site-packages\psd_tools\psd\header.py", line 83, in read
+    return cls(*read_fmt(cls._FORMAT, fp))
+  File "<attrs generated methods psd_tools.psd.header.FileHeader>", line 36, in __init__
+    _setattr('color_mode', __attr_converter_color_mode(color_mode))
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Python314\Lib\enum.py", line 708, in __call__
+    return cls.__new__(cls, value)
+           ~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Python314\Lib\enum.py", line 1193, in __new__
+    raise ve_exc
+ValueError: 3340 is not a valid ColorMode
+
+2026-05-10 09:49:45,116 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 09:49:48,284 [INFO] app.main (main.py:102): GET /api/psd/preview/2ecbaa7c
+2026-05-10 09:51:47,748 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 09:51:47,750 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: album_pdf_1986e236.pdf (from 2026-05-09)
+2026-05-10 09:51:47,752 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: batch_download_4f95ae81.zip (from 2026-05-09)
+2026-05-10 09:51:47,754 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: batch_download_643a0611.zip (from 2026-05-09)
+2026-05-10 09:51:47,758 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_09a14fc7 (from 2026-05-09)
+2026-05-10 09:51:47,762 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_18bb40fe (from 2026-05-09)
+2026-05-10 09:51:47,766 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_3dc9f1e1 (from 2026-05-09)
+2026-05-10 09:51:47,769 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_451648c0 (from 2026-05-09)
+2026-05-10 09:51:47,775 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_4ee2dfbc (from 2026-05-09)
+2026-05-10 09:51:47,779 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_6eb9dae2 (from 2026-05-09)
+2026-05-10 09:51:47,782 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_7bb052f0 (from 2026-05-09)
+2026-05-10 09:51:47,786 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_879f251c (from 2026-05-09)
+2026-05-10 09:51:47,789 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_a2a19c85 (from 2026-05-09)
+2026-05-10 09:51:47,793 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_d62713e9 (from 2026-05-09)
+2026-05-10 09:51:47,797 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_f22f9b51 (from 2026-05-09)
+2026-05-10 09:51:47,798 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_3fed2f9e.jpg (from 2026-05-09)
+2026-05-10 09:51:47,799 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_57b18695.jpg (from 2026-05-09)
+2026-05-10 09:51:47,800 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_6623d09c.jpg (from 2026-05-09)
+2026-05-10 09:51:47,802 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_6623d09c.tiff (from 2026-05-09)
+2026-05-10 09:51:47,803 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_722a243f.jpg (from 2026-05-09)
+2026-05-10 09:51:47,804 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_7f23ced0.jpg (from 2026-05-09)
+2026-05-10 09:51:47,805 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_abf01a7a.jpg (from 2026-05-09)
+2026-05-10 09:51:47,807 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_f1c28794.jpg (from 2026-05-09)
+2026-05-10 09:51:47,808 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_f31f4d23.jpg (from 2026-05-09)
+2026-05-10 09:51:47,808 [INFO] app.services.cleanup (cleanup.py:40): Cleanup complete: deleted 23 items, freed 2254.2 MB
+2026-05-10 09:52:26,370 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 09:52:26,372 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 09:52:28,313 [INFO] app.main (main.py:102): GET /api/health
+2026-05-10 09:52:52,530 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 09:52:52,536 [WARNING] app.routes.auth (auth.py:40): Failed login attempt: admin
+2026-05-10 09:52:52,537 [WARNING] app.main (main.py:106): POST /api/auth/login -> 401
+2026-05-10 09:53:00,097 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 09:53:00,099 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 09:53:18,686 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 09:53:19,942 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 400
+2026-05-10 09:57:03,910 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 09:57:03,913 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 09:57:48,145 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 09:57:48,146 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 09:57:50,275 [INFO] app.main (main.py:102): GET /api/health
+2026-05-10 10:03:49,311 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-10 10:03:49,342 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 10:03:49,349 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 10:03:57,235 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-10 10:03:57,242 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:03:58,837 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 400
+2026-05-10 10:04:12,611 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:04:21,472 [INFO] app.main (main.py:102): GET /api/psd/preview/4c863ac9
+2026-05-10 10:05:48,457 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:05:50,021 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 400
+2026-05-10 10:06:13,109 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:06:19,044 [INFO] app.main (main.py:102): GET /api/psd/preview/da3c560d
+2026-05-10 10:07:09,557 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-10 10:07:09,595 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 10:07:15,033 [INFO] app.main (main.py:102): GET /api/psd/result/0f84e0e1
+2026-05-10 10:07:19,415 [INFO] app.main (main.py:102): OPTIONS /api/psd/result-psd/0f84e0e1
+2026-05-10 10:07:19,423 [INFO] app.main (main.py:102): GET /api/psd/result-psd/0f84e0e1
+2026-05-10 10:07:39,554 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:07:40,935 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 400
+2026-05-10 10:08:58,620 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:09:04,911 [INFO] app.main (main.py:102): GET /api/psd/preview/118ff909
+2026-05-10 10:09:21,434 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 10:09:27,422 [INFO] app.main (main.py:102): GET /api/psd/result/234abac0
+2026-05-10 10:09:40,438 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 10:09:49,578 [INFO] app.main (main.py:102): GET /api/psd/result/e09b2f63
+2026-05-10 10:10:09,033 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 10:10:14,158 [INFO] app.main (main.py:102): GET /api/psd/result/1e63b8dd
+2026-05-10 10:11:49,563 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:11:50,911 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 400
+2026-05-10 10:14:33,540 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:14:33,542 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:16:25,064 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:16:25,066 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:16:49,494 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:16:49,495 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:17:04,689 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:17:04,691 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:17:43,143 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:17:43,145 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:17:44,907 [INFO] app.main (main.py:102): GET /api/health
+2026-05-10 10:18:06,972 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-10 10:18:06,977 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 10:18:06,986 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 10:18:24,063 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-10 10:18:24,087 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:18:32,793 [INFO] app.main (main.py:102): GET /api/psd/preview/a47f4f23
+2026-05-10 10:18:50,024 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-10 10:18:50,037 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 10:18:55,537 [INFO] app.main (main.py:102): GET /api/psd/result/321e0f9b
+2026-05-10 10:19:17,730 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 10:19:23,117 [INFO] app.main (main.py:102): GET /api/psd/result/7b2dc1c6
+2026-05-10 10:19:26,880 [INFO] app.main (main.py:102): OPTIONS /api/psd/result-psd/7b2dc1c6
+2026-05-10 10:19:26,886 [INFO] app.main (main.py:102): GET /api/psd/result-psd/7b2dc1c6
+2026-05-10 10:19:26,985 [INFO] app.routes.jobs (jobs.py:571): Created layered PSD from original: 555.psd
+2026-05-10 10:19:46,148 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:19:51,783 [INFO] app.main (main.py:102): GET /api/psd/preview/7f3689d7
+2026-05-10 10:23:47,918 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:23:47,920 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:24:36,585 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:24:36,587 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:24:38,652 [INFO] app.main (main.py:102): GET /api/health
+2026-05-10 10:25:36,959 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:25:36,961 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 401
+2026-05-10 10:25:49,426 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:25:49,427 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 401
+2026-05-10 10:26:04,476 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 10:26:04,481 [WARNING] app.routes.auth (auth.py:40): Failed login attempt: album
+2026-05-10 10:26:04,482 [WARNING] app.main (main.py:106): POST /api/auth/login -> 401
+2026-05-10 10:26:10,981 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 10:26:10,984 [WARNING] app.routes.auth (auth.py:40): Failed login attempt: album
+2026-05-10 10:26:10,985 [WARNING] app.main (main.py:106): POST /api/auth/login -> 401
+2026-05-10 10:26:18,518 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 10:26:18,520 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 10:26:29,186 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:26:36,939 [INFO] app.main (main.py:102): GET /api/psd/preview/ca057d7a
+2026-05-10 10:26:54,761 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 10:27:00,260 [INFO] app.main (main.py:102): GET /api/psd/result/afd3107a
+2026-05-10 10:27:05,006 [INFO] app.main (main.py:102): OPTIONS /api/psd/result-psd/afd3107a
+2026-05-10 10:27:05,013 [INFO] app.main (main.py:102): GET /api/psd/result-psd/afd3107a
+2026-05-10 10:27:06,082 [INFO] app.routes.jobs (jobs.py:579): PSD download: copied original with layers from 555.psd
+2026-05-10 10:27:24,921 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:27:30,799 [INFO] app.main (main.py:102): GET /api/psd/preview/f0e93fa3
+2026-05-10 10:28:46,449 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-10 10:28:46,463 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:28:52,470 [INFO] app.main (main.py:102): GET /api/psd/preview/d43b201f
+2026-05-10 10:32:22,629 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:32:22,631 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:33:03,804 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:33:03,806 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:34:05,938 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:34:05,940 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:35:11,272 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:35:11,274 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:36:04,386 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:36:04,389 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:36:06,322 [INFO] app.main (main.py:102): GET /api/health
+2026-05-10 10:36:38,219 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-10 10:36:38,223 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 10:36:38,227 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 10:36:47,462 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 10:36:54,183 [INFO] app.main (main.py:102): GET /api/psd/preview/945a7836
+2026-05-10 10:37:12,503 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-10 10:37:12,512 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 10:37:18,100 [INFO] app.main (main.py:102): GET /api/psd/result/e1722383
+2026-05-10 10:37:21,558 [INFO] app.main (main.py:102): OPTIONS /api/psd/result-psd/e1722383
+2026-05-10 10:37:21,564 [INFO] app.main (main.py:102): GET /api/psd/result-psd/e1722383
+2026-05-10 10:37:21,677 [INFO] app.routes.jobs (jobs.py:576): PSD download: created from 001 (4).psd with photos in composite
+2026-05-10 10:40:31,639 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:40:31,642 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:41:17,526 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:41:17,528 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:42:18,162 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:42:18,165 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:43:49,730 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:43:49,733 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:44:21,716 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:44:21,719 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:45:15,766 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:45:15,768 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 10:51:14,507 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 10:51:14,510 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 11:20:17,376 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 11:20:17,379 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 11:23:27,714 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 11:23:27,717 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 11:23:29,567 [INFO] app.main (main.py:102): GET /api/health
+2026-05-10 11:24:04,659 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-10 11:24:04,662 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 11:24:04,666 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 11:24:06,791 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-10 11:24:06,794 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-10 11:24:06,802 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:24:06,871 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:24:24,960 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-10 11:24:24,966 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:24:33,805 [INFO] app.main (main.py:102): GET /api/psd/preview/4e11f258
+2026-05-10 11:24:54,071 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-10 11:24:54,083 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 11:24:59,763 [INFO] app.main (main.py:102): GET /api/psd/result/6d19466d
+2026-05-10 11:25:02,349 [INFO] app.main (main.py:102): OPTIONS /api/psd/result-psd/6d19466d
+2026-05-10 11:25:02,358 [INFO] app.main (main.py:102): GET /api/psd/result-psd/6d19466d
+2026-05-10 11:25:04,013 [INFO] app.routes.jobs (jobs.py:563): Created PSD with photos: psd_result_6d19466d_final.psd (116.6 MB)
+2026-05-10 11:25:21,637 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:25:24,995 [INFO] app.main (main.py:102): GET /api/psd/preview/17a01024
+2026-05-10 11:26:03,086 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 11:26:08,536 [INFO] app.main (main.py:102): GET /api/psd/result/2ae17e36
+2026-05-10 11:26:24,072 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 11:26:28,910 [INFO] app.main (main.py:102): GET /api/psd/result/9f2c2a68
+2026-05-10 11:26:31,873 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 11:26:36,680 [INFO] app.main (main.py:102): GET /api/psd/result/4d4a984a
+2026-05-10 11:26:46,427 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:26:46,517 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:26:53,558 [INFO] app.main (main.py:102): OPTIONS /api/storage/delete
+2026-05-10 11:26:53,569 [INFO] app.main (main.py:102): POST /api/storage/delete
+2026-05-10 11:26:54,645 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:28:22,265 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 11:28:22,266 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 11:29:48,282 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 11:29:48,284 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 11:29:50,000 [INFO] app.main (main.py:102): GET /api/health
+2026-05-10 11:30:41,885 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 11:30:41,893 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 11:31:13,819 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:31:22,352 [INFO] app.main (main.py:102): GET /api/psd/preview/6b3cf9d6
+2026-05-10 11:31:40,320 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 11:31:45,321 [INFO] app.main (main.py:102): GET /api/psd/result/e29028dd
+2026-05-10 11:31:57,216 [INFO] app.main (main.py:102): OPTIONS /api/psd/result-psd/e29028dd
+2026-05-10 11:31:57,221 [INFO] app.main (main.py:102): GET /api/psd/result-psd/e29028dd
+2026-05-10 11:31:58,243 [ERROR] app.routes.jobs (jobs.py:586): PSD creation failed: 'ImageResources' object has no attribute 'append'
+2026-05-10 11:35:25,582 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 11:35:25,583 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 11:35:37,669 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 11:35:37,673 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 11:36:58,229 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 11:36:58,230 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 11:37:00,131 [INFO] app.main (main.py:102): GET /api/health
+2026-05-10 11:38:08,028 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-10 11:38:08,034 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 11:38:08,042 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 11:38:30,349 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-10 11:38:30,354 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:38:38,522 [INFO] app.main (main.py:102): GET /api/psd/preview/8bc0ba5b
+2026-05-10 11:39:04,397 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-10 11:39:04,410 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 11:39:09,530 [INFO] app.main (main.py:102): GET /api/psd/result/50f20457
+2026-05-10 11:39:14,294 [INFO] app.main (main.py:102): OPTIONS /api/psd/result-psd/50f20457
+2026-05-10 11:39:14,298 [INFO] app.main (main.py:102): GET /api/psd/result-psd/50f20457
+2026-05-10 11:39:16,043 [INFO] app.routes.jobs (jobs.py:571): Created PSD: psd_result_50f20457_final.psd (10800x3600, 116.6 MB)
+2026-05-10 11:39:57,804 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:40:01,128 [INFO] app.main (main.py:102): GET /api/psd/preview/78c13e4f
+2026-05-10 11:41:00,617 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 11:41:00,621 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 11:41:09,994 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:41:16,128 [INFO] app.main (main.py:102): GET /api/psd/preview/759449be
+2026-05-10 11:41:48,830 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 11:41:54,438 [INFO] app.main (main.py:102): GET /api/psd/result/a899e5ee
+2026-05-10 11:42:32,788 [INFO] app.main (main.py:102): OPTIONS /api/psd/result-psd/a899e5ee
+2026-05-10 11:42:32,795 [INFO] app.main (main.py:102): GET /api/psd/result-psd/a899e5ee
+2026-05-10 11:42:34,364 [INFO] app.routes.jobs (jobs.py:571): Created PSD: psd_result_a899e5ee_final.psd (10800x3600, 116.6 MB)
+2026-05-10 11:43:11,367 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:43:14,707 [INFO] app.main (main.py:102): GET /api/psd/preview/a32a6115
+2026-05-10 11:43:38,355 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 11:43:44,194 [INFO] app.main (main.py:102): GET /api/psd/result/4cf08065
+2026-05-10 11:46:36,280 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 11:46:36,282 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 11:48:29,783 [INFO] app.main (main.py:130): Running startup file cleanup...
+2026-05-10 11:48:29,786 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-10 11:48:31,740 [INFO] app.main (main.py:102): GET /api/health
+2026-05-10 11:49:10,830 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-10 11:49:10,835 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:49:10,837 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 401
+2026-05-10 11:49:22,848 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-10 11:49:22,852 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 11:49:22,860 [WARNING] app.routes.auth (auth.py:40): Failed login attempt: admin
+2026-05-10 11:49:22,861 [WARNING] app.main (main.py:106): POST /api/auth/login -> 401
+2026-05-10 11:49:28,858 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 11:49:28,861 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 11:49:35,232 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:49:42,903 [INFO] app.main (main.py:102): GET /api/psd/preview/7f81804e
+2026-05-10 11:50:04,034 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-10 11:50:04,044 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 11:50:08,988 [INFO] app.main (main.py:102): GET /api/psd/result/89b333c7
+2026-05-10 11:50:14,809 [INFO] app.main (main.py:102): OPTIONS /api/psd/result-psd/89b333c7
+2026-05-10 11:50:14,817 [INFO] app.main (main.py:102): GET /api/psd/result-psd/89b333c7
+2026-05-10 11:50:16,122 [INFO] app.routes.jobs (jobs.py:651): Created PSD with photos in layers: psd_result_89b333c7_final.psd (168.1 MB)
+2026-05-10 11:50:38,388 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:50:44,320 [INFO] app.main (main.py:102): GET /api/psd/preview/6772ea2a
+2026-05-10 11:51:11,210 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-10 11:51:11,214 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-10 11:51:11,221 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:51:11,262 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:51:16,171 [INFO] app.main (main.py:102): OPTIONS /api/storage/delete
+2026-05-10 11:51:16,193 [INFO] app.main (main.py:102): POST /api/storage/delete
+2026-05-10 11:51:16,668 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:51:39,140 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:51:39,149 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:52:23,581 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 11:52:23,585 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-10 11:52:29,353 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:52:29,357 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 11:52:58,199 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:53:04,030 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-10 11:53:07,484 [INFO] app.main (main.py:102): GET /api/psd/preview/39433907
+2026-05-10 11:53:15,813 [INFO] app.main (main.py:102): GET /api/psd/preview/23650d01
+2026-05-10 11:53:42,736 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 11:53:47,462 [INFO] app.main (main.py:102): GET /api/psd/result/06135987
+2026-05-10 11:53:48,888 [INFO] app.main (main.py:102): GET /api/psd/preview/23650d01
+2026-05-10 11:54:05,311 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-10 11:54:11,874 [INFO] app.main (main.py:102): GET /api/psd/result/5b1da708
+2026-05-10 11:54:12,569 [INFO] app.main (main.py:102): GET /api/psd/result/06135987
+2026-05-10 11:54:32,597 [INFO] app.main (main.py:102): OPTIONS /api/psd/result/06135987
+2026-05-10 11:54:32,610 [INFO] app.main (main.py:102): GET /api/psd/result/06135987
+2026-05-10 11:54:33,401 [INFO] app.main (main.py:102): OPTIONS /api/psd/result/5b1da708
+2026-05-10 11:54:33,406 [INFO] app.main (main.py:102): GET /api/psd/result/5b1da708
+2026-05-10 11:54:44,897 [INFO] app.main (main.py:102): OPTIONS /api/psd/download-all-pdf
+2026-05-10 11:54:44,905 [INFO] app.main (main.py:102): POST /api/psd/download-all-pdf
+2026-05-10 12:02:58,296 [INFO] app.main (main.py:102): GET /api/psd/result/5b1da708
+2026-05-10 12:03:18,926 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-10 12:03:18,928 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-10 12:03:18,933 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 12:03:18,943 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 12:03:24,252 [INFO] app.main (main.py:102): OPTIONS /api/storage/delete
+2026-05-10 12:03:24,255 [INFO] app.main (main.py:102): POST /api/storage/delete
+2026-05-10 12:03:24,349 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-10 12:03:50,339 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-10 12:03:50,342 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-10 12:03:50,343 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in

@@ -1,0 +1,126 @@
+{
+  "templates": [
+    {
+      "layout_id": "single_full",
+      "name": "Single Full Page",
+      "slots": [{"x": 0, "y": 0, "w": 100, "h": 100}],
+      "min_images": 1,
+      "max_images": 1,
+      "best_for": ["hero", "highlight", "landscape", "portrait"]
+    },
+    {
+      "layout_id": "grid_2_horizontal",
+      "name": "Two Side by Side",
+      "slots": [
+        {"x": 0, "y": 0, "w": 49, "h": 100},
+        {"x": 51, "y": 0, "w": 49, "h": 100}
+      ],
+      "min_images": 2,
+      "max_images": 2,
+      "best_for": ["portrait", "mixed"]
+    },
+    {
+      "layout_id": "grid_2_vertical",
+      "name": "Two Stacked",
+      "slots": [
+        {"x": 0, "y": 0, "w": 100, "h": 49},
+        {"x": 0, "y": 51, "w": 100, "h": 49}
+      ],
+      "min_images": 2,
+      "max_images": 2,
+      "best_for": ["landscape"]
+    },
+    {
+      "layout_id": "grid_3_top_heavy",
+      "name": "One Large Top, Two Bottom",
+      "slots": [
+        {"x": 0, "y": 0, "w": 100, "h": 58},
+        {"x": 0, "y": 60, "w": 49, "h": 40},
+        {"x": 51, "y": 60, "w": 49, "h": 40}
+      ],
+      "min_images": 3,
+      "max_images": 3,
+      "best_for": ["landscape", "mixed"]
+    },
+    {
+      "layout_id": "grid_3_left_heavy",
+      "name": "One Large Left, Two Right",
+      "slots": [
+        {"x": 0, "y": 0, "w": 58, "h": 100},
+        {"x": 60, "y": 0, "w": 40, "h": 49},
+        {"x": 60, "y": 51, "w": 40, "h": 49}
+      ],
+      "min_images": 3,
+      "max_images": 3,
+      "best_for": ["portrait", "mixed"]
+    },
+    {
+      "layout_id": "grid_4_equal",
+      "name": "Four Equal Grid",
+      "slots": [
+        {"x": 0, "y": 0, "w": 49, "h": 49},
+        {"x": 51, "y": 0, "w": 49, "h": 49},
+        {"x": 0, "y": 51, "w": 49, "h": 49},
+        {"x": 51, "y": 51, "w": 49, "h": 49}
+      ],
+      "min_images": 4,
+      "max_images": 4,
+      "best_for": ["square", "mixed"]
+    },
+    {
+      "layout_id": "grid_4_feature",
+      "name": "One Feature + Three Small",
+      "slots": [
+        {"x": 0, "y": 0, "w": 65, "h": 100},
+        {"x": 67, "y": 0, "w": 33, "h": 32},
+        {"x": 67, "y": 34, "w": 33, "h": 32},
+        {"x": 67, "y": 68, "w": 33, "h": 32}
+      ],
+      "min_images": 4,
+      "max_images": 4,
+      "best_for": ["portrait", "highlight"]
+    },
+    {
+      "layout_id": "grid_5_mosaic",
+      "name": "Five Image Mosaic",
+      "slots": [
+        {"x": 0, "y": 0, "w": 60, "h": 55},
+        {"x": 62, "y": 0, "w": 38, "h": 55},
+        {"x": 0, "y": 57, "w": 33, "h": 43},
+        {"x": 35, "y": 57, "w": 33, "h": 43},
+        {"x": 70, "y": 57, "w": 30, "h": 43}
+      ],
+      "min_images": 5,
+      "max_images": 5,
+      "best_for": ["mixed", "landscape"]
+    },
+    {
+      "layout_id": "grid_6_equal",
+      "name": "Six Equal Grid",
+      "slots": [
+        {"x": 0, "y": 0, "w": 32, "h": 49},
+        {"x": 34, "y": 0, "w": 32, "h": 49},
+        {"x": 68, "y": 0, "w": 32, "h": 49},
+        {"x": 0, "y": 51, "w": 32, "h": 49},
+        {"x": 34, "y": 51, "w": 32, "h": 49},
+        {"x": 68, "y": 51, "w": 32, "h": 49}
+      ],
+      "min_images": 5,
+      "max_images": 6,
+      "best_for": ["square", "mixed"]
+    },
+    {
+      "layout_id": "collage_asymmetric",
+      "name": "Asymmetric Collage",
+      "slots": [
+        {"x": 0, "y": 0, "w": 45, "h": 60},
+        {"x": 47, "y": 0, "w": 53, "h": 40},
+        {"x": 47, "y": 42, "w": 53, "h": 58},
+        {"x": 0, "y": 62, "w": 45, "h": 38}
+      ],
+      "min_images": 4,
+      "max_images": 4,
+      "best_for": ["mixed", "collage"]
+    }
+  ]
+}
