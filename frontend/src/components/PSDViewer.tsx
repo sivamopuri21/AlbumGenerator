@@ -1,11 +1,23 @@
 "use client";
 import { useState } from "react";
 import Dropzone from "./Dropzone";
+import SlotEditor from "./SlotEditor";
 import { analyzePSD, getPSDPreviewUrl, PSDAnalysis, PSDLayer } from "@/services/api";
 import { getToken } from "@/services/auth";
 import axios from "axios";
 
-const API_BASE = "http://127.0.0.1:8001/api";
+const API_BASE = "/api";
+
+function getApiBase() {
+  if (typeof window !== "undefined") {
+    const port = window.location.port;
+    if (port && port !== "8001") {
+      return "http://127.0.0.1:8001/api";
+    }
+    return window.location.origin + "/api";
+  }
+  return "/api";
+}
 
 interface PSDSession {
   file: File;
@@ -25,6 +37,7 @@ export default function PSDViewer() {
   const [error, setError] = useState<string | null>(null);
   const [hoveredLayer, setHoveredLayer] = useState<PSDLayer | null>(null);
   const [assignMode, setAssignMode] = useState<"bulk" | "individual">("bulk");
+  const [editingSlot, setEditingSlot] = useState<{ index: number; photo: File; layer: PSDLayer } | null>(null);
 
   const activeSession = sessions[activeIdx] || null;
   const analysis = activeSession?.analysis || null;
@@ -88,11 +101,11 @@ export default function PSDViewer() {
           });
         });
       }
-      const { data } = await axios.post(`${API_BASE}/psd/composite-slots`, form, {
+      const { data } = await axios.post(`${getApiBase()}/psd/composite-slots`, form, {
         headers: { "Content-Type": "multipart/form-data", "Authorization": `Bearer ${getToken()}` },
         timeout: 120000,
       });
-      updateSession(activeIdx, { resultUrl: `${API_BASE}/psd/result/${data.result_id}?token=${getToken()}` });
+      updateSession(activeIdx, { resultUrl: `${getApiBase()}/psd/result/${data.result_id}?token=${getToken()}` });
     } catch (e: any) {
       setError(e?.response?.data?.detail || e?.message || "Compositing failed");
     } finally {
@@ -132,6 +145,23 @@ export default function PSDViewer() {
 
   return (
     <div className="space-y-6">
+      {/* Slot Editor Modal */}
+      {editingSlot && resultUrl && (
+        <SlotEditor
+          resultId={resultUrl.split("?")[0].split("/").pop()!}
+          slotIndex={editingSlot.index}
+          slotWidth={editingSlot.layer.width}
+          slotHeight={editingSlot.layer.height}
+          photo={editingSlot.photo}
+          onDone={(newResultId) => {
+            // Update the result URL to force refresh
+            updateSession(activeIdx, { resultUrl: `${getApiBase()}/psd/result/${newResultId}?token=${getToken()}&t=${Date.now()}` });
+            setEditingSlot(null);
+          }}
+          onCancel={() => setEditingSlot(null)}
+        />
+      )}
+
       {/* Download loader overlay */}
       {downloading && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
@@ -236,7 +266,7 @@ export default function PSDViewer() {
                           const results = sessions.filter(s => s.resultUrl);
                           for (let i = 0; i < results.length; i++) {
                             const rid = results[i].resultUrl!.split("?")[0].split("/").pop()!;
-                            const resp = await axios.get(`${API_BASE}/psd/result-psd/${rid}`, {
+                            const resp = await axios.get(`${getApiBase()}/psd/result-psd/${rid}`, {
                               responseType: "blob", timeout: 120000,
                               headers: { "Authorization": `Bearer ${getToken()}` },
                             });
@@ -264,7 +294,7 @@ export default function PSDViewer() {
                           const resultIds = sessions.filter(s => s.resultUrl).map(s => s.resultUrl!.split("?")[0].split("/").pop()!).join(",");
                           const form = new FormData();
                           form.append("result_ids", resultIds);
-                          const resp = await axios.post(`${API_BASE}/psd/download-all-pdf`, form, {
+                          const resp = await axios.post(`${getApiBase()}/psd/download-all-pdf`, form, {
                             responseType: "blob", timeout: 120000,
                             headers: { "Authorization": `Bearer ${getToken()}` },
                           });
@@ -399,7 +429,7 @@ export default function PSDViewer() {
               {/* Preview */}
               <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
                 <div className="p-3 border-b bg-gray-50 text-sm font-medium text-gray-600">
-                  {resultUrl ? "✅ Result" : "Preview"}
+                  {resultUrl ? "✅ Result (click a slot to adjust)" : "Preview"}
                 </div>
                 <div className="p-4">
                   <div className="relative inline-block w-full">
@@ -426,6 +456,28 @@ export default function PSDViewer() {
                         }}
                       >
                         <span className="absolute -top-5 left-0 text-xs bg-blue-500 text-white px-1 rounded">{i + 1}</span>
+                      </div>
+                    ))}
+                    {/* Clickable slots on result for adjustment */}
+                    {resultUrl && slots.map((layer, i) => (
+                      <div
+                        key={`adj-${i}`}
+                        onClick={() => {
+                          const photo = slotPhotos[i]?.[0];
+                          if (photo) {
+                            setEditingSlot({ index: i, photo, layer });
+                          }
+                        }}
+                        className="absolute border-2 border-transparent hover:border-yellow-400 hover:bg-yellow-400/10 cursor-pointer transition-colors"
+                        style={{
+                          left: `${(layer.x / analysis.width) * 100}%`,
+                          top: `${(layer.y / analysis.height) * 100}%`,
+                          width: `${(layer.width / analysis.width) * 100}%`,
+                          height: `${(layer.height / analysis.height) * 100}%`,
+                        }}
+                        title={`Click to adjust Slot ${i + 1}`}
+                      >
+                        <span className="absolute top-1 right-1 text-xs bg-yellow-500 text-white px-1 rounded opacity-0 hover:opacity-100 transition-opacity">✏️</span>
                       </div>
                     ))}
                   </div>

@@ -1,0 +1,14 @@
+INFO:     Started server process [19156]
+INFO:     Waiting for application startup.
+2026-05-11 19:20:10,668 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-11 19:20:10,669 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+2026-05-11 19:20:13,651 [INFO] app.main (main.py:102): GET /_next/static/chunks/webpack-1b849bb452135622.js
+2026-05-11 19:20:13,659 [INFO] app.main (main.py:102): GET /_next/static/chunks/fd9d1056-9fc83d1bf6a57226.js
+2026-05-11 19:20:13,679 [INFO] app.main (main.py:102): GET /_next/static/chunks/938-f6fec073db78c91f.js
+2026-05-11 19:20:13,682 [INFO] app.main (main.py:102): GET /_next/static/chunks/main-app-898fdcbe561e4f3a.js
+2026-05-11 19:20:13,684 [INFO] app.main (main.py:102): GET /_next/static/chunks/1-41e38e2349702b77.js
+2026-05-11 19:20:13,686 [INFO] app.main (main.py:102): GET /_next/static/chunks/app/page-2c436086b49fc0b3.js
+2026-05-11 19:25:04,493 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-11 19:25:04,500 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in

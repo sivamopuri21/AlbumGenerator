@@ -1,10 +1,23 @@
 import axios from "axios";
 import { getToken } from "./auth";
 
-const api = axios.create({ baseURL: "http://127.0.0.1:8001/api", timeout: 600000 });
+function getApiBase() {
+  if (typeof window !== "undefined") {
+    // If running on a different port than 8001, it's dev mode — point to backend directly
+    const port = window.location.port;
+    if (port && port !== "8001") {
+      return "http://127.0.0.1:8001/api";
+    }
+    return window.location.origin + "/api";
+  }
+  return "/api";
+}
 
-// Add auth token to every request
+const api = axios.create({ baseURL: "/api", timeout: 600000 });
+
+// Override baseURL at request time
 api.interceptors.request.use((config) => {
+  config.baseURL = getApiBase();
   const token = getToken();
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
@@ -91,15 +104,18 @@ export async function getPageList(jobId: string): Promise<PageList> {
 }
 
 export function getPagePreviewUrl(jobId: string, pageNum: number): string {
-  return `http://127.0.0.1:8001/api/jobs/${jobId}/preview/${pageNum}`;
+  const base = typeof window !== "undefined" ? window.location.origin : "";
+  return `${base}/api/jobs/${jobId}/preview/${pageNum}`;
 }
 
 export function getDownloadZipUrl(jobId: string): string {
-  return `http://127.0.0.1:8001/api/jobs/${jobId}/download`;
+  const base = typeof window !== "undefined" ? window.location.origin : "";
+  return `${base}/api/jobs/${jobId}/download`;
 }
 
 export function getDownloadPdfUrl(jobId: string): string {
-  return `http://127.0.0.1:8001/api/jobs/${jobId}/pdf`;
+  const base = typeof window !== "undefined" ? window.location.origin : "";
+  return `${base}/api/jobs/${jobId}/pdf`;
 }
 
 
@@ -147,5 +163,8 @@ export async function analyzePSD(file: File): Promise<PSDAnalysis> {
 
 export function getPSDPreviewUrl(previewId: string): string {
   const token = getToken();
-  return `http://127.0.0.1:8001/api/psd/preview/${previewId}?token=${token}`;
+  const base = typeof window !== "undefined"
+    ? (window.location.port && window.location.port !== "8001" ? "http://127.0.0.1:8001" : window.location.origin)
+    : "";
+  return `${base}/api/psd/preview/${previewId}?token=${token}`;
 }

@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { getToken } from "@/services/auth";
 
-const API_BASE = "http://127.0.0.1:8001/api";
+const API_BASE = typeof window !== "undefined"
+  ? (window.location.port && window.location.port !== "8001" ? "http://127.0.0.1:8001/api" : window.location.origin + "/api")
+  : "/api";
 
 interface DateInfo {
   date: string;

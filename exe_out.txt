@@ -1,0 +1,14 @@
+==================================================
+  LohanDigitals - Album Generator
+==================================================
+  Starting server on http://localhost:8001
+  Opening browser...
+  Close this window to stop the app.
+==================================================
+INFO:     68.58.219.47          USA:0 - "GET /_next/static/chunks/webpack-1b849bb452135622.js HTTP/1.1" 304 Not Modified
+INFO:     68.58.219.47          USA:0 - "GET /_next/static/chunks/fd9d1056-9fc83d1bf6a57226.js HTTP/1.1" 304 Not Modified
+INFO:     68.58.219.47          USA:0 - "GET /_next/static/chunks/938-f6fec073db78c91f.js HTTP/1.1" 304 Not Modified
+INFO:     68.58.219.47          USA:0 - "GET /_next/static/chunks/main-app-898fdcbe561e4f3a.js HTTP/1.1" 304 Not Modified
+INFO:     68.58.219.47          USA:0 - "GET /_next/static/chunks/1-41e38e2349702b77.js HTTP/1.1" 304 Not Modified
+INFO:     68.58.219.47          USA:0 - "GET /_next/static/chunks/app/page-2c436086b49fc0b3.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:63604 - "POST /api/auth/login HTTP/1.1" 200 OK

@@ -53,7 +53,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:4000", "http://127.0.0.1:4000", "http://localhost:4001", "http://127.0.0.1:4001"],
+    allow_origins=["*"],  # Allow all origins for desktop app
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -116,6 +116,11 @@ async def log_requests(request: Request, call_next):
 
 # Serve output files (images for preview)
 app.mount("/output", StaticFiles(directory=str(OUTPUT_PATH)), name="output")
+
+# Serve frontend static files (built Next.js export)
+FRONTEND_DIR = Path(__file__).parent.parent / "static"
+if FRONTEND_DIR.exists():
+    app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
 
 
 @app.get("/api/health")

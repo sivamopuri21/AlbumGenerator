@@ -415,7 +415,138 @@ async def composite_slots(request: Request):
     meta_path = OUTPUT_PATH / f"psd_result_{result_id}_meta.json"
     meta_path.write_text(json.dumps({"preview_id": preview_id, "psd_file": str(psd_files[0])}))
 
+    # Save slot info for adjustments later
+    slot_meta = OUTPUT_PATH / f"psd_result_{result_id}_slots.json"
+    slot_meta.write_text(json.dumps({
+        "slots": slot_layers,
+        "preview_id": preview_id,
+        "psd_file": str(psd_files[0]),
+    }))
+
     return {"result_id": result_id}
+
+
+@router.post("/psd/adjust-slot")
+async def adjust_slot(request: Request):
+    """
+    Re-composite a single slot with zoom/offset adjustments.
+    Body (multipart form):
+      - result_id: existing result to modify
+      - slot_index: which slot to adjust
+      - photo: the photo file
+      - zoom: float (1.0 = fit, 1.5 = 150% zoom, etc.)
+      - offset_x: float (-1.0 to 1.0, 0 = center)
+      - offset_y: float (-1.0 to 1.0, 0 = center)
+    """
+    import json
+    from app.config import OUTPUT_PATH
+    from PIL import Image as PILImage
+    import cv2
+    import numpy as np
+
+    PILImage.MAX_IMAGE_PIXELS = 500000000
+
+    form = await request.form()
+    result_id = form.get("result_id", "")
+    slot_index = int(form.get("slot_index", 0))
+    zoom = float(form.get("zoom", 1.0))
+    offset_x = float(form.get("offset_x", 0.0))  # -1 to 1
+    offset_y = float(form.get("offset_y", 0.0))  # -1 to 1
+
+    # Load existing result
+    result_path = OUTPUT_PATH / f"psd_result_{result_id}.jpg"
+    if not result_path.exists():
+        raise HTTPException(404, "Result not found")
+
+    background = cv2.imread(str(result_path))
+    if background is None:
+        raise HTTPException(500, "Cannot load result")
+
+    bg_h, bg_w = background.shape[:2]
+
+    # Load slot info
+    slot_meta_path = OUTPUT_PATH / f"psd_result_{result_id}_slots.json"
+    if not slot_meta_path.exists():
+        raise HTTPException(404, "Slot info not found")
+
+    slot_data = json.loads(slot_meta_path.read_text())
+    slot_layers = slot_data["slots"]
+
+    if slot_index >= len(slot_layers):
+        raise HTTPException(400, f"Invalid slot index: {slot_index}")
+
+    slot = slot_layers[slot_index]
+
+    # Load PSD for scale
+    from psd_tools import PSDImage
+    psd_file = slot_data.get("psd_file", "")
+    psd = PSDImage.open(psd_file)
+    scale_x = 1.0
+    scale_y = 1.0
+
+    sx = int(slot["x"] * scale_x)
+    sy = int(slot["y"] * scale_y)
+    sw = int(slot["w"] * scale_x)
+    sh = int(slot["h"] * scale_y)
+
+    # Read the photo
+    photo_file = form.get(f"photo")
+    if not photo_file:
+        raise HTTPException(400, "No photo provided")
+
+    photo_data = await photo_file.read()
+    nparr = np.frombuffer(photo_data, np.uint8)
+    photo = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    if photo is None:
+        raise HTTPException(400, "Invalid photo")
+
+    ph, pw = photo.shape[:2]
+
+    # Apply zoom and offset
+    slot_aspect = sw / max(sh, 1)
+    photo_aspect = pw / max(ph, 1)
+
+    # Base size (fit to cover)
+    if photo_aspect > slot_aspect:
+        base_h = sh
+        base_w = int(sh * photo_aspect)
+    else:
+        base_w = sw
+        base_h = int(sw / photo_aspect) if photo_aspect > 0 else sh
+
+    # Apply zoom
+    new_w = int(base_w * zoom)
+    new_h = int(base_h * zoom)
+    new_w = max(new_w, sw)  # Never smaller than slot
+    new_h = max(new_h, sh)
+
+    photo = cv2.resize(photo, (new_w, new_h), interpolation=cv2.INTER_LANCZOS4)
+
+    # Apply offset (0 = center, -1 = full left/top, 1 = full right/bottom)
+    max_offset_x = new_w - sw
+    max_offset_y = new_h - sh
+    crop_x = int((max_offset_x / 2) * (1 + offset_x))
+    crop_y = int((max_offset_y / 2) * (1 + offset_y))
+    crop_x = max(0, min(crop_x, new_w - sw))
+    crop_y = max(0, min(crop_y, new_h - sh))
+
+    photo = photo[crop_y:crop_y+sh, crop_x:crop_x+sw]
+
+    # Place on background
+    if sx < 0: sx = 0
+    if sy < 0: sy = 0
+    if sx + sw > bg_w: sw = bg_w - sx
+    if sy + sh > bg_h: sh = bg_h - sy
+
+    if sh > 0 and sw > 0 and photo.shape[0] >= sh and photo.shape[1] >= sw:
+        background[sy:sy+sh, sx:sx+sw] = photo[:sh, :sw]
+
+    # Save updated result (overwrite)
+    result_rgb = cv2.cvtColor(background, cv2.COLOR_BGR2RGB)
+    result_img = PILImage.fromarray(result_rgb)
+    result_img.save(str(result_path), "JPEG", quality=100, dpi=(300, 300))
+
+    return {"result_id": result_id, "adjusted_slot": slot_index}
 
 
 @router.get("/psd/result/{result_id}")
