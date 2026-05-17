@@ -28,6 +28,7 @@ export default function SlotEditor({ resultId, slotIndex, slotWidth, slotHeight,
   const [zoom, setZoom] = useState(1.0);
   const [offsetX, setOffsetX] = useState(0.0);
   const [offsetY, setOffsetY] = useState(0.0);
+  const [rotation, setRotation] = useState(0);
   const [saving, setSaving] = useState(false);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
@@ -44,6 +45,7 @@ export default function SlotEditor({ resultId, slotIndex, slotWidth, slotHeight,
       form.append("zoom", zoom.toString());
       form.append("offset_x", offsetX.toString());
       form.append("offset_y", offsetY.toString());
+      form.append("rotation", rotation.toString());
       form.append("photo", photo);
 
       const { data } = await axios.post(`${getApiBase()}/psd/adjust-slot`, form, {
@@ -85,6 +87,8 @@ export default function SlotEditor({ resultId, slotIndex, slotWidth, slotHeight,
               objectFit: "cover",
               left: `${-((zoom - 1) * 50) + offsetX * ((zoom - 1) * 50)}%`,
               top: `${-((zoom - 1) * 50) + offsetY * ((zoom - 1) * 50)}%`,
+              transform: `rotate(${rotation}deg)`,
+              transformOrigin: "center center",
             }}
           />
         </div>
@@ -136,12 +140,27 @@ export default function SlotEditor({ resultId, slotIndex, slotWidth, slotHeight,
               className="w-full"
             />
           </div>
+          <div>
+            <label className="text-sm font-medium text-gray-700 flex justify-between">
+              <span>Rotation</span>
+              <span className="text-gray-400">{rotation}°</span>
+            </label>
+            <input
+              type="range"
+              min="-180"
+              max="180"
+              step="1"
+              value={rotation}
+              onChange={(e) => setRotation(parseInt(e.target.value))}
+              className="w-full"
+            />
+          </div>
         </div>
 
         {/* Buttons */}
         <div className="flex gap-3">
           <button
-            onClick={() => { setZoom(1.0); setOffsetX(0); setOffsetY(0); }}
+            onClick={() => { setZoom(1.0); setOffsetX(0); setOffsetY(0); setRotation(0); }}
             className="px-4 py-2 text-sm border rounded-lg hover:bg-gray-50"
           >
             Reset

@@ -38,6 +38,7 @@ export default function PSDViewer() {
   const [hoveredLayer, setHoveredLayer] = useState<PSDLayer | null>(null);
   const [assignMode, setAssignMode] = useState<"bulk" | "individual">("bulk");
   const [editingSlot, setEditingSlot] = useState<{ index: number; photo: File; layer: PSDLayer } | null>(null);
+  const [viewMode, setViewMode] = useState<"gallery" | "editor">("gallery");
 
   const activeSession = sessions[activeIdx] || null;
   const analysis = activeSession?.analysis || null;
@@ -126,7 +127,7 @@ export default function PSDViewer() {
     const groupNames = new Set((analysis.groups || []).map(g => g.name));
     const groupChildren = analysis.layers.filter(
       l => l.parent_group && l.width > 200 && l.height > 200
-        && l.width < analysis.width * 0.7 && l.height < analysis.height * 0.7
+        && !(l.width > analysis.width * 0.95 && l.height > analysis.height * 0.95)
         && !l.name.toLowerCase().includes("background")
     );
     if (groupChildren.length > 0) return groupChildren;
@@ -134,7 +135,7 @@ export default function PSDViewer() {
       l => l.width > 200 && l.height > 200
         && !l.name.toLowerCase().includes("background")
         && !groupNames.has(l.name)
-        && l.width < analysis.width * 0.7 && l.height < analysis.height * 0.7
+        && !(l.width > analysis.width * 0.95 && l.height > analysis.height * 0.95)
     );
   };
 
@@ -200,6 +201,131 @@ export default function PSDViewer() {
         </>
       ) : (
         <>
+          {/* View mode toggle */}
+          <div className="flex items-center justify-between">
+            <div className="flex gap-1 bg-gray-100 p-1 rounded-lg">
+              <button
+                onClick={() => setViewMode("gallery")}
+                className={`px-4 py-1.5 rounded-md text-sm font-medium ${viewMode === "gallery" ? "bg-white shadow" : "text-gray-500"}`}
+              >
+                🖼 Overview
+              </button>
+              <button
+                onClick={() => setViewMode("editor")}
+                className={`px-4 py-1.5 rounded-md text-sm font-medium ${viewMode === "editor" ? "bg-white shadow" : "text-gray-500"}`}
+              >
+                ✏️ Editor
+              </button>
+            </div>
+            <button onClick={reset} className="px-3 py-1 text-xs text-red-500 hover:bg-red-50 rounded">Reset All</button>
+          </div>
+
+          {/* Add More PSD Files */}
+          <div className="bg-white rounded-xl shadow-sm border p-3">
+            <div className="flex items-center gap-3">
+              <label className="flex-1 cursor-pointer">
+                <input
+                  type="file"
+                  accept=".psd"
+                  multiple
+                  className="hidden"
+                  onChange={async (e) => {
+                    const newFiles = Array.from(e.target.files || []);
+                    if (!newFiles.length) return;
+                    setLoading(true);
+                    setError(null);
+                    const newSessions: PSDSession[] = [];
+                    for (const f of newFiles) {
+                      try {
+                        const result = await analyzePSD(f);
+                        newSessions.push({ file: f, analysis: result, slotPhotos: {}, bulkPhotos: [], resultUrl: null });
+                      } catch (err: any) {
+                        newSessions.push({ file: f, analysis: null, slotPhotos: {}, bulkPhotos: [], resultUrl: null });
+                      }
+                    }
+                    setSessions(prev => [...prev, ...newSessions]);
+                    setLoading(false);
+                    e.target.value = "";
+                  }}
+                />
+                <span className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium text-gray-700 inline-block cursor-pointer">
+                  {loading ? "⏳ Analyzing..." : "+ Add More PSD Files"}
+                </span>
+              </label>
+              <span className="text-xs text-gray-400">{sessions.length} files loaded</span>
+            </div>
+          </div>
+
+          {/* Gallery View */}
+          {viewMode === "gallery" && (
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <h2 className="text-lg font-semibold">All PSD Files ({sessions.length})</h2>
+                <div className="text-sm text-gray-500">
+                  {sessions.filter(s => s.resultUrl).length}/{sessions.length} completed
+                </div>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {sessions.map((s, i) => {
+                  const a = s.analysis;
+                  const slotsForThis = a ? a.layers.filter(
+                    l => l.parent_group && l.width > 200 && l.height > 200 && !(l.width > a.width * 0.95 && l.height > a.height * 0.95) && !l.name.toLowerCase().includes("background")
+                  ) : [];
+                  const fallbackSlots = a ? a.layers.filter(
+                    l => l.width > 200 && l.height > 200 && !l.name.toLowerCase().includes("background") && !(l.width > a.width * 0.95 && l.height > a.height * 0.95)
+                  ) : [];
+                  const displaySlots = slotsForThis.length > 0 ? slotsForThis : fallbackSlots;
+                  const portrait = displaySlots.filter(l => l.height > l.width * 1.2).length;
+                  const landscape = displaySlots.filter(l => l.width > l.height * 1.2).length;
+                  const square = displaySlots.length - portrait - landscape;
+
+                  return (
+                    <div
+                      key={i}
+                      onClick={() => { setActiveIdx(i); setViewMode("editor"); }}
+                      className={`bg-white rounded-lg border overflow-hidden cursor-pointer hover:shadow-md transition-shadow ${
+                        s.resultUrl ? "border-green-300" : "border-gray-200"
+                      }`}
+                    >
+                      {/* Thumbnail */}
+                      <div className="aspect-video bg-gray-100 relative overflow-hidden">
+                        {a && (
+                          <img
+                            src={s.resultUrl || getPSDPreviewUrl(a.preview_id)}
+                            alt={s.file.name}
+                            className="w-full h-full object-contain"
+                          />
+                        )}
+                        {s.resultUrl && (
+                          <div className="absolute top-1 right-1 bg-green-500 text-white text-xs px-1.5 py-0.5 rounded">✓</div>
+                        )}
+                        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-xs px-2 py-1">
+                          {i + 1}. {s.file.name}
+                        </div>
+                      </div>
+                      {/* Info */}
+                      <div className="p-2">
+                        {a ? (
+                          <div className="flex gap-1 flex-wrap">
+                            <span className="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded">{displaySlots.length} slots</span>
+                            {portrait > 0 && <span className="text-xs bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded">{portrait}↕</span>}
+                            {landscape > 0 && <span className="text-xs bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded">{landscape}↔</span>}
+                            {square > 0 && <span className="text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded">{square}◻</span>}
+                          </div>
+                        ) : (
+                          <span className="text-xs text-red-500">Failed</span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Editor View */}
+          {viewMode === "editor" && (
+          <>
           {/* File tabs */}
           <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
             <div className="flex border-b overflow-x-auto">
@@ -500,6 +626,45 @@ export default function PSDViewer() {
                   </a>
                 )}
                 {resultUrl && (
+                  <button
+                    onClick={async () => {
+                      const photos = activeSession?.bulkPhotos || [];
+                      const slotPhotoFiles = Object.values(activeSession?.slotPhotos || {}).flat();
+                      const allPhotos = photos.length > 0 ? photos : slotPhotoFiles;
+                      if (allPhotos.length === 0) { alert("No photos to move"); return; }
+
+                      // Ask for source folder (remembers last used)
+                      let sourceFolder = localStorage.getItem("photo_source_folder") || "";
+                      if (!sourceFolder) {
+                        sourceFolder = prompt("Where are your photos located?\nEnter folder path (e.g., D:\\MyPhotos):") || "";
+                        if (!sourceFolder) return;
+                        localStorage.setItem("photo_source_folder", sourceFolder);
+                      }
+
+                      const filenames = allPhotos.map(f => f.name).join(",");
+                      try {
+                        const form = new FormData();
+                        form.append("filenames", filenames);
+                        form.append("source_folder", sourceFolder);
+                        const { data } = await axios.post(`${getApiBase()}/psd/move-to-used`, form, {
+                          headers: { "Authorization": `Bearer ${getToken()}` },
+                        });
+                        if (data.moved > 0) {
+                          alert(`✓ Moved ${data.moved} photos to:\n${data.used_folder}`);
+                        } else {
+                          const newFolder = prompt(`No files found in: ${sourceFolder}\nEnter correct folder path:`);
+                          if (newFolder) localStorage.setItem("photo_source_folder", newFolder);
+                        }
+                      } catch (e: any) {
+                        alert("Failed: " + (e?.response?.data?.detail || e?.message));
+                      }
+                    }}
+                    className="py-3 px-4 border border-orange-300 bg-orange-50 text-orange-700 rounded-lg font-medium hover:bg-orange-100 text-sm"
+                  >
+                    📁 Move to Used
+                  </button>
+                )}
+                {resultUrl && (
                   <button onClick={() => updateSession(activeIdx, { resultUrl: null })}
                     className="py-3 px-6 border border-gray-300 rounded-lg font-medium hover:bg-gray-50">
                     ← Edit
@@ -507,6 +672,8 @@ export default function PSDViewer() {
                 )}
               </div>
             </>
+          )}
+          </>
           )}
         </>
       )}

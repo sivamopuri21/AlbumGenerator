@@ -61,3 +61,333 @@
 2026-05-15 15:36:46,062 [INFO] app.main (main.py:102): GET /api/psd/result/b035f2b6
 2026-05-15 15:37:06,232 [INFO] app.main (main.py:102): OPTIONS /api/psd/result/b035f2b6
 2026-05-15 15:37:06,237 [INFO] app.main (main.py:102): GET /api/psd/result/b035f2b6
+2026-05-15 22:35:43,424 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-15 22:35:43,426 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-15 22:35:44,035 [INFO] app.main (main.py:102): GET /api/health
+2026-05-15 22:38:28,803 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-15 22:38:28,808 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-15 22:38:28,817 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-15 22:38:53,484 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-15 22:38:53,489 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 22:39:02,705 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 22:39:06,209 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 22:39:11,840 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 22:39:17,681 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 22:39:23,488 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 22:39:28,335 [INFO] app.main (main.py:102): GET /api/psd/preview/4ffefe5f
+2026-05-15 22:39:28,336 [INFO] app.main (main.py:102): GET /api/psd/preview/38277519
+2026-05-15 22:39:28,338 [INFO] app.main (main.py:102): GET /api/psd/preview/6ca06b50
+2026-05-15 22:39:28,339 [INFO] app.main (main.py:102): GET /api/psd/preview/ea8ff7e9
+2026-05-15 22:39:28,346 [INFO] app.main (main.py:102): GET /api/psd/preview/09837705
+2026-05-15 22:39:28,347 [INFO] app.main (main.py:102): GET /api/psd/preview/ee8e47cb
+2026-05-15 22:39:45,478 [INFO] app.main (main.py:102): GET /api/psd/preview/4ffefe5f
+2026-05-15 22:39:45,480 [INFO] app.main (main.py:102): GET /api/psd/preview/ea8ff7e9
+2026-05-15 22:39:45,481 [INFO] app.main (main.py:102): GET /api/psd/preview/6ca06b50
+2026-05-15 22:39:45,483 [INFO] app.main (main.py:102): GET /api/psd/preview/09837705
+2026-05-15 22:39:45,484 [INFO] app.main (main.py:102): GET /api/psd/preview/ee8e47cb
+2026-05-15 22:41:18,930 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 22:41:22,148 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 22:41:25,029 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 22:41:30,791 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 22:41:34,063 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 22:41:39,797 [INFO] app.main (main.py:102): GET /api/psd/preview/763b2cd5
+2026-05-15 22:41:39,799 [INFO] app.main (main.py:102): GET /api/psd/preview/bd633411
+2026-05-15 22:41:39,799 [INFO] app.main (main.py:102): GET /api/psd/preview/cb2b2b5b
+2026-05-15 22:41:39,800 [INFO] app.main (main.py:102): GET /api/psd/preview/82c39090
+2026-05-15 22:41:39,801 [INFO] app.main (main.py:102): GET /api/psd/preview/f33afa18
+2026-05-15 22:46:42,060 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-15 22:46:42,062 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-15 22:47:16,895 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-15 22:47:16,896 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-15 22:47:18,925 [INFO] app.main (main.py:102): GET /api/health
+2026-05-15 22:58:38,179 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-15 22:58:38,180 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-15 23:00:57,884 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-15 23:00:57,886 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-15 23:01:00,060 [INFO] app.main (main.py:102): GET /api/health
+2026-05-15 23:01:30,039 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-15 23:01:30,044 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-15 23:01:30,048 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-15 23:01:49,960 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-15 23:01:49,965 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:01:55,406 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:02:01,530 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:02:04,771 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:02:10,352 [INFO] app.main (main.py:102): GET /api/psd/preview/e0b8dc67
+2026-05-15 23:02:10,353 [INFO] app.main (main.py:102): GET /api/psd/preview/bd994074
+2026-05-15 23:02:10,354 [INFO] app.main (main.py:102): GET /api/psd/preview/f23166cc
+2026-05-15 23:02:10,360 [INFO] app.main (main.py:102): GET /api/psd/preview/f654a5e3
+2026-05-15 23:02:35,814 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-15 23:02:35,818 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-15 23:02:38,686 [INFO] app.main (main.py:102): GET /api/psd/result/f70914ec
+2026-05-15 23:03:13,172 [INFO] app.main (main.py:102): OPTIONS /api/psd/move-to-used
+2026-05-15 23:03:13,176 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-15 23:06:35,591 [INFO] app.main (main.py:102): GET /api/psd/preview/bd994074
+2026-05-15 23:06:35,593 [INFO] app.main (main.py:102): GET /api/psd/preview/f23166cc
+2026-05-15 23:06:35,593 [INFO] app.main (main.py:102): GET /api/psd/preview/f654a5e3
+2026-05-15 23:07:05,409 [INFO] app.main (main.py:102): GET /api/psd/preview/bd994074
+2026-05-15 23:07:05,411 [INFO] app.main (main.py:102): GET /api/psd/preview/f23166cc
+2026-05-15 23:07:05,412 [INFO] app.main (main.py:102): GET /api/psd/preview/f654a5e3
+2026-05-15 23:09:56,371 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-15 23:09:56,372 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-15 23:10:33,333 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-15 23:10:33,335 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-15 23:10:35,532 [INFO] app.main (main.py:102): GET /api/health
+2026-05-15 23:10:47,549 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-15 23:10:47,551 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-15 23:10:47,557 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-15 23:10:47,559 [WARNING] app.main (main.py:106): GET /api/storage/info -> 401
+2026-05-15 23:10:47,561 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-15 23:10:47,562 [WARNING] app.main (main.py:106): GET /api/storage/info -> 401
+2026-05-15 23:11:25,562 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:11:25,565 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 401
+2026-05-15 23:11:25,707 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:11:25,709 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 401
+2026-05-15 23:11:25,765 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:11:25,766 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 401
+2026-05-15 23:11:26,134 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:11:26,136 [WARNING] app.main (main.py:106): POST /api/psd/analyze -> 401
+2026-05-15 23:11:46,240 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-15 23:11:46,245 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-15 23:11:46,252 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-15 23:12:00,181 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-15 23:12:00,186 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:12:05,421 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:12:08,246 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:12:13,748 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-15 23:12:16,819 [INFO] app.main (main.py:102): GET /api/psd/preview/443c30cd
+2026-05-15 23:12:16,821 [INFO] app.main (main.py:102): GET /api/psd/preview/4a701198
+2026-05-15 23:12:16,827 [INFO] app.main (main.py:102): GET /api/psd/preview/e9fced90
+2026-05-15 23:12:16,827 [INFO] app.main (main.py:102): GET /api/psd/preview/7720ec02
+2026-05-15 23:12:39,502 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-15 23:12:39,511 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-15 23:12:42,844 [INFO] app.main (main.py:102): GET /api/psd/result/2d2fee3b
+2026-05-15 23:12:45,260 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-15 23:12:51,526 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-15 23:13:05,279 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-15 23:13:13,600 [INFO] app.main (main.py:102): OPTIONS /api/psd/adjust-slot
+2026-05-15 23:13:13,609 [INFO] app.main (main.py:102): POST /api/psd/adjust-slot
+2026-05-15 23:13:16,175 [INFO] app.main (main.py:102): GET /api/psd/result/2d2fee3b
+2026-05-15 23:13:20,677 [INFO] app.main (main.py:102): OPTIONS /api/psd/move-to-used
+2026-05-15 23:13:20,682 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-15 23:14:25,174 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-15 23:14:25,175 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-15 23:15:09,952 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-15 23:15:09,953 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-16 08:11:43,410 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-16 08:11:43,424 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_09837705 (from 2026-05-15)
+2026-05-16 08:11:43,436 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_38277519 (from 2026-05-15)
+2026-05-16 08:11:43,441 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_443c30cd (from 2026-05-15)
+2026-05-16 08:11:43,443 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_49fa0b52 (from 2026-05-15)
+2026-05-16 08:11:43,449 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_4a701198 (from 2026-05-15)
+2026-05-16 08:11:43,465 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_4ffefe5f (from 2026-05-15)
+2026-05-16 08:11:43,482 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_6ca06b50 (from 2026-05-15)
+2026-05-16 08:11:43,487 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_763b2cd5 (from 2026-05-15)
+2026-05-16 08:11:43,498 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_7720ec02 (from 2026-05-15)
+2026-05-16 08:11:43,502 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_82c39090 (from 2026-05-15)
+2026-05-16 08:11:43,513 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_bd633411 (from 2026-05-15)
+2026-05-16 08:11:43,529 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_bd994074 (from 2026-05-15)
+2026-05-16 08:11:43,545 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_cb2b2b5b (from 2026-05-15)
+2026-05-16 08:11:43,550 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_e0b8dc67 (from 2026-05-15)
+2026-05-16 08:11:43,566 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_e9fced90 (from 2026-05-15)
+2026-05-16 08:11:43,581 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_ea8ff7e9 (from 2026-05-15)
+2026-05-16 08:11:43,596 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_ee8e47cb (from 2026-05-15)
+2026-05-16 08:11:43,606 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_f23166cc (from 2026-05-15)
+2026-05-16 08:11:43,623 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_f33afa18 (from 2026-05-15)
+2026-05-16 08:11:43,640 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_preview_f654a5e3 (from 2026-05-15)
+2026-05-16 08:11:43,643 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_2d2fee3b.jpg (from 2026-05-15)
+2026-05-16 08:11:43,644 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_2d2fee3b_meta.json (from 2026-05-15)
+2026-05-16 08:11:43,644 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_2d2fee3b_slots.json (from 2026-05-15)
+2026-05-16 08:11:43,645 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_b035f2b6.jpg (from 2026-05-15)
+2026-05-16 08:11:43,648 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_b035f2b6_meta.json (from 2026-05-15)
+2026-05-16 08:11:43,649 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_b035f2b6_slots.json (from 2026-05-15)
+2026-05-16 08:11:43,651 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_f70914ec.jpg (from 2026-05-15)
+2026-05-16 08:11:43,652 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_f70914ec_meta.json (from 2026-05-15)
+2026-05-16 08:11:43,653 [INFO] app.services.cleanup (cleanup.py:35): Deleted old file: psd_result_f70914ec_slots.json (from 2026-05-15)
+2026-05-16 08:11:43,653 [INFO] app.services.cleanup (cleanup.py:40): Cleanup complete: deleted 29 items, freed 2388.4 MB
+2026-05-16 08:11:46,892 [INFO] app.main (main.py:102): GET /api/health
+2026-05-16 08:12:16,104 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-16 08:12:16,107 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-16 08:12:16,113 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-16 08:12:31,544 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-16 08:12:31,548 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:12:36,063 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:12:38,699 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:12:44,132 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:12:47,129 [INFO] app.main (main.py:102): GET /api/psd/preview/62aae7ad
+2026-05-16 08:12:47,130 [INFO] app.main (main.py:102): GET /api/psd/preview/f36d4feb
+2026-05-16 08:12:47,134 [INFO] app.main (main.py:102): GET /api/psd/preview/e3fc2d65
+2026-05-16 08:12:47,135 [INFO] app.main (main.py:102): GET /api/psd/preview/55915d3f
+2026-05-16 08:13:07,365 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-16 08:13:07,369 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 08:13:10,021 [INFO] app.main (main.py:102): GET /api/psd/result/1bf793b0
+2026-05-16 08:13:12,449 [INFO] app.main (main.py:102): OPTIONS /api/psd/move-to-used
+2026-05-16 08:13:12,461 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 08:14:09,203 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-16 08:14:09,205 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-16 08:14:09,209 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 08:14:09,220 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 08:14:13,622 [INFO] app.main (main.py:102): OPTIONS /api/storage/delete
+2026-05-16 08:14:13,628 [INFO] app.main (main.py:102): POST /api/storage/delete
+2026-05-16 08:14:13,761 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 08:14:31,036 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-16 08:14:31,037 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-16 08:14:44,671 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:14:47,477 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:14:50,090 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:14:55,715 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:14:58,757 [INFO] app.main (main.py:102): GET /api/psd/preview/44e140fa
+2026-05-16 08:14:58,758 [INFO] app.main (main.py:102): GET /api/psd/preview/b516241d
+2026-05-16 08:14:58,759 [INFO] app.main (main.py:102): GET /api/psd/preview/a91d8b0d
+2026-05-16 08:14:58,780 [INFO] app.main (main.py:102): GET /api/psd/preview/9339252b
+2026-05-16 08:15:28,912 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 08:15:31,968 [INFO] app.main (main.py:102): GET /api/psd/result/e03bad62
+2026-05-16 08:15:33,235 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 08:16:15,951 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 08:16:19,169 [INFO] app.main (main.py:102): GET /api/psd/result/e177c63e
+2026-05-16 08:16:21,538 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 08:18:53,416 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-16 08:18:53,416 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-16 08:19:19,950 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-16 08:19:19,951 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-16 08:19:23,422 [INFO] app.main (main.py:102): GET /api/health
+2026-05-16 08:19:58,533 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-16 08:19:58,535 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-16 08:20:12,626 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:20:17,284 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:20:19,909 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:20:26,484 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:20:29,581 [INFO] app.main (main.py:102): GET /api/psd/preview/316b6dce
+2026-05-16 08:20:29,582 [INFO] app.main (main.py:102): GET /api/psd/preview/a739083c
+2026-05-16 08:20:29,584 [INFO] app.main (main.py:102): GET /api/psd/preview/bf90f38a
+2026-05-16 08:20:29,610 [INFO] app.main (main.py:102): GET /api/psd/preview/aaeb4769
+2026-05-16 08:20:56,591 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 08:20:59,332 [INFO] app.main (main.py:102): GET /api/psd/result/4efd280f
+2026-05-16 08:21:01,197 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 08:27:55,792 [INFO] app.main (main.py:102): OPTIONS /api/psd/move-to-used
+2026-05-16 08:27:55,796 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 08:29:36,279 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-16 08:29:36,283 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 08:29:38,897 [INFO] app.main (main.py:102): GET /api/psd/result/940ae6fd
+2026-05-16 08:29:41,525 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 08:32:50,771 [INFO] app.main (main.py:102): GET /api/psd/preview/bf90f38a
+2026-05-16 08:32:50,772 [INFO] app.main (main.py:102): GET /api/psd/preview/a739083c
+2026-05-16 08:32:50,775 [INFO] app.main (main.py:102): GET /api/psd/preview/aaeb4769
+2026-05-16 08:33:10,503 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-16 08:33:10,505 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:33:13,411 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:33:15,872 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:33:20,892 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:33:23,692 [INFO] app.main (main.py:102): GET /api/psd/preview/8669e270
+2026-05-16 08:33:23,693 [INFO] app.main (main.py:102): GET /api/psd/preview/c3f63e49
+2026-05-16 08:33:23,694 [INFO] app.main (main.py:102): GET /api/psd/preview/61a4e812
+2026-05-16 08:33:23,697 [INFO] app.main (main.py:102): GET /api/psd/preview/6d62c0da
+2026-05-16 08:33:47,144 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 08:33:51,446 [INFO] app.main (main.py:102): GET /api/psd/result/5c3e66d9
+2026-05-16 08:33:53,567 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 08:35:08,823 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 08:35:20,278 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 08:35:23,050 [INFO] app.main (main.py:102): GET /api/psd/result/9bc71a5d
+2026-05-16 08:35:25,350 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 08:38:09,018 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-16 08:38:09,020 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-16 08:38:09,023 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 08:38:09,049 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 08:38:12,876 [INFO] app.main (main.py:102): OPTIONS /api/storage/delete
+2026-05-16 08:38:12,879 [INFO] app.main (main.py:102): POST /api/storage/delete
+2026-05-16 08:38:13,277 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 08:38:31,700 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-16 08:38:31,702 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-16 08:39:34,392 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-16 08:39:34,392 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-16 08:39:37,883 [INFO] app.main (main.py:102): GET /api/health
+2026-05-16 08:40:47,905 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-16 08:40:47,909 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-16 08:40:47,914 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-16 08:41:03,899 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:41:08,611 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:41:11,412 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:41:16,655 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 08:41:19,505 [INFO] app.main (main.py:102): GET /api/psd/preview/d94ab548
+2026-05-16 08:41:19,506 [INFO] app.main (main.py:102): GET /api/psd/preview/58e69e43
+2026-05-16 08:41:19,508 [INFO] app.main (main.py:102): GET /api/psd/preview/ada193d7
+2026-05-16 08:41:19,510 [INFO] app.main (main.py:102): GET /api/psd/preview/723f9f60
+2026-05-16 08:41:36,178 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-16 08:41:36,188 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 08:41:38,979 [INFO] app.main (main.py:102): GET /api/psd/result/799cf0bb
+2026-05-16 08:41:58,461 [INFO] app.main (main.py:102): OPTIONS /api/psd/move-to-used
+2026-05-16 08:41:58,468 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 08:42:13,841 [INFO] app.main (main.py:102): GET /api/psd/preview/d94ab548
+2026-05-16 08:42:27,152 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 08:42:31,201 [INFO] app.main (main.py:102): GET /api/psd/result/6bb1fe8f
+2026-05-16 08:42:33,111 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 08:59:41,579 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-16 08:59:41,581 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-16 09:00:33,757 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-16 09:00:33,758 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-16 09:01:40,960 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-16 09:01:40,961 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-16 09:01:44,354 [INFO] app.main (main.py:102): GET /api/health
+2026-05-16 09:02:13,260 [INFO] app.main (main.py:102): OPTIONS /api/auth/login
+2026-05-16 09:02:13,264 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-16 09:02:13,267 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-16 09:02:28,176 [INFO] app.main (main.py:102): OPTIONS /api/psd/analyze
+2026-05-16 09:02:28,179 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 09:02:33,162 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 09:02:35,757 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 09:02:41,824 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 09:02:41,965 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-16 09:02:41,967 [INFO] app.main (main.py:102): OPTIONS /api/storage/info
+2026-05-16 09:02:41,972 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 09:02:41,993 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 09:02:44,966 [INFO] app.main (main.py:102): GET /api/psd/preview/42e976b8
+2026-05-16 09:02:44,969 [INFO] app.main (main.py:102): GET /api/psd/preview/ea88e1e9
+2026-05-16 09:02:44,970 [INFO] app.main (main.py:102): GET /api/psd/preview/1695f109
+2026-05-16 09:02:44,971 [INFO] app.main (main.py:102): GET /api/psd/preview/c943ca7e
+2026-05-16 09:03:00,416 [INFO] app.main (main.py:102): OPTIONS /api/psd/composite-slots
+2026-05-16 09:03:00,420 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 09:03:03,361 [INFO] app.main (main.py:102): GET /api/psd/result/40ea538f
+2026-05-16 09:03:05,289 [INFO] app.main (main.py:102): OPTIONS /api/psd/move-to-used
+2026-05-16 09:03:05,292 [INFO] app.main (main.py:102): POST /api/psd/move-to-used
+2026-05-16 09:03:24,447 [INFO] app.main (main.py:102): OPTIONS /api/psd/adjust-slot
+2026-05-16 09:03:39,651 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 09:03:42,272 [INFO] app.main (main.py:102): GET /api/psd/preview/bc4dbfd3
+2026-05-16 09:04:00,509 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 09:04:03,883 [INFO] app.main (main.py:102): GET /api/psd/result/e73a0ac5
+2026-05-16 09:04:32,078 [INFO] app.main (main.py:102): POST /api/psd/adjust-slot
+2026-05-16 09:04:34,772 [INFO] app.main (main.py:102): GET /api/psd/result/e73a0ac5
+2026-05-16 09:04:40,051 [INFO] app.main (main.py:102): GET /api/psd/preview/bc4dbfd3
+2026-05-16 09:04:56,223 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 09:04:56,256 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 09:04:59,856 [INFO] app.main (main.py:102): OPTIONS /api/storage/delete
+2026-05-16 09:04:59,860 [INFO] app.main (main.py:102): POST /api/storage/delete
+2026-05-16 09:05:00,159 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 09:05:18,025 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 09:05:18,806 [WARNING] app.main (main.py:106): POST /api/psd/composite-slots -> 404
+2026-05-16 09:05:36,276 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 09:05:36,631 [WARNING] app.main (main.py:106): POST /api/psd/composite-slots -> 404
+2026-05-16 09:05:40,806 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 09:05:41,162 [WARNING] app.main (main.py:106): POST /api/psd/composite-slots -> 404
+2026-05-16 09:05:42,085 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 09:05:42,453 [WARNING] app.main (main.py:106): POST /api/psd/composite-slots -> 404
+2026-05-16 09:05:42,577 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 09:05:42,937 [WARNING] app.main (main.py:106): POST /api/psd/composite-slots -> 404
+2026-05-16 09:05:43,114 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 09:05:43,527 [WARNING] app.main (main.py:106): POST /api/psd/composite-slots -> 404
+2026-05-16 09:06:02,158 [INFO] app.main (main.py:102): POST /api/auth/login
+2026-05-16 09:06:02,161 [INFO] app.routes.auth (auth.py:45): User 'admin' logged in
+2026-05-16 09:06:09,919 [INFO] app.main (main.py:102): POST /api/psd/analyze
+2026-05-16 09:06:12,874 [INFO] app.main (main.py:102): GET /api/psd/preview/07920676
+2026-05-16 09:06:27,348 [INFO] app.main (main.py:102): POST /api/psd/composite-slots
+2026-05-16 09:06:30,564 [INFO] app.main (main.py:102): GET /api/psd/result/7391be71
+2026-05-16 09:06:56,651 [INFO] app.main (main.py:102): GET /api/psd/preview/07920676
+2026-05-16 09:07:08,546 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 09:07:08,554 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 09:07:12,007 [INFO] app.main (main.py:102): POST /api/storage/delete
+2026-05-16 09:07:12,052 [INFO] app.main (main.py:102): GET /api/storage/info
+2026-05-16 09:14:24,980 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-16 09:14:24,981 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-17 22:27:53,230 [INFO] app.main (main.py:135): Running startup file cleanup...
+2026-05-17 22:27:53,231 [INFO] app.services.cleanup (cleanup.py:43): Cleanup: nothing to delete, all files are from today
+2026-05-17 22:28:32,900 [INFO] app.main (main.py:102): GET /
+2026-05-17 22:28:32,902 [WARNING] app.main (main.py:106): GET / -> 404

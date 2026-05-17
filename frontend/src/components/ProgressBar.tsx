@@ -31,17 +31,17 @@ export default function ProgressBar({ progress, status, message }: Props) {
         <span className={`font-medium ${failed ? "text-red-600" : "text-gray-700"}`}>
           {label}
         </span>
-        <span className="text-gray-500">{Math.round(progress)}%</span>
+        <span className="text-gray-400 font-mono text-xs">{Math.round(progress)}%</span>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+      <div className="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
         <div
-          className={`h-full rounded-full transition-all duration-500 ${
-            failed ? "bg-red-500" : "bg-primary-600"
+          className={`h-full rounded-full transition-all duration-700 ease-out ${
+            failed ? "bg-red-500" : "bg-gradient-to-r from-indigo-500 to-purple-500"
           }`}
           style={{ width: `${progress}%` }}
         />
       </div>
-      {message && <p className="text-sm text-gray-500">{message}</p>}
+      {message && <p className="text-xs text-gray-500">{message}</p>}
     </div>
   );
 }

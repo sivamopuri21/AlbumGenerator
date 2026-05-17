@@ -19,12 +19,22 @@ else:
     os.chdir(BASE_DIR)
 
 PORT = 8001
-URL = f"http://localhost:{PORT}"
+URL = f"http://127.0.0.1:{PORT}"
 
 
 def open_browser():
-    """Wait for server to start, then open browser."""
+    """Wait for server to start, then open Chrome."""
     time.sleep(3)
+    import subprocess
+    chrome_paths = [
+        r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+        r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+    ]
+    for chrome in chrome_paths:
+        if os.path.exists(chrome):
+            subprocess.Popen([chrome, URL])
+            return
+    # Fallback to default browser
     webbrowser.open(URL)
 
 

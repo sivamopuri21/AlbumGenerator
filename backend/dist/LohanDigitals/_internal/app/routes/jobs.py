@@ -269,6 +269,11 @@ async def composite_slots(request: Request):
 
     bg_h, bg_w = background.shape[:2]
 
+    # Upscale background to 2x for higher quality output (zoom to 200% without pixelation)
+    SCALE_FACTOR = 2
+    background = cv2.resize(background, (bg_w * SCALE_FACTOR, bg_h * SCALE_FACTOR), interpolation=cv2.INTER_LANCZOS4)
+    bg_h, bg_w = background.shape[:2]
+
     # Load PSD to get layer info
     psd_files = list(preview_dir.glob("*.psd"))
     if not psd_files:
@@ -292,13 +297,13 @@ async def composite_slots(request: Request):
                 bbox = child.bbox
                 w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
                 # Only include reasonably sized boxes (not text, not full-page)
-                if w > 200 and h > 200 and w < psd.width * 0.7 and h < psd.height * 0.7:
+                if w > 200 and h > 200 and not (w > psd.width * 0.95 and h > psd.height * 0.95):
                     slot_layers.append({"x": bbox[0], "y": bbox[1], "w": w, "h": h, "name": child.name})
         else:
             bbox = layer.bbox
             w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
             # Skip full-page layers and tiny layers
-            if w > 200 and h > 200 and w < psd.width * 0.7 and h < psd.height * 0.7:
+            if w > 200 and h > 200 and not (w > psd.width * 0.95 and h > psd.height * 0.95):
                 slot_layers.append({"x": bbox[0], "y": bbox[1], "w": w, "h": h, "name": layer.name})
 
     # Sort by position: LEFT PAGE first (top to bottom, left to right), then RIGHT PAGE (top to bottom, right to left)
@@ -310,24 +315,33 @@ async def composite_slots(request: Request):
     right_slots.sort(key=lambda s: (s["y"], s["x"]))  # left to right for right page
     slot_layers = left_slots + right_slots
 
-    # No scaling — work at original PSD resolution
-    # The fullres.jpg is saved at exact PSD dimensions
-    scale_x = 1.0
-    scale_y = 1.0
+    # No scaling — work at 2x PSD resolution for quality
+    scale_x = float(SCALE_FACTOR)
+    scale_y = float(SCALE_FACTOR)
 
     # Place photos with smart orientation matching
-    # Collect all uploaded photos
+    # Collect all uploaded photos and save them to disk for "Move to Used"
     uploaded_photos = []
+    photos_dir = preview_dir / "photos"
+    photos_dir.mkdir(exist_ok=True)
+
     for key, upload_file in form.items():
         if not key.startswith("slot_"):
             continue
         photo_data = await upload_file.read()
+
+        # Save photo to disk with original filename
+        filename = getattr(upload_file, 'filename', None) or f'photo_{key}.jpg'
+        photo_save_path = photos_dir / filename
+        with open(str(photo_save_path), 'wb') as f:
+            f.write(photo_data)
+
         nparr = np.frombuffer(photo_data, np.uint8)
         photo = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         if photo is not None:
             ph, pw = photo.shape[:2]
             orientation = "landscape" if pw > ph * 1.2 else ("portrait" if ph > pw * 1.2 else "square")
-            uploaded_photos.append({"photo": photo, "orientation": orientation, "idx": len(uploaded_photos)})
+            uploaded_photos.append({"photo": photo, "orientation": orientation, "idx": len(uploaded_photos), "filename": filename})
 
     # Classify slots by orientation
     slot_info = []
@@ -367,7 +381,11 @@ async def composite_slots(request: Request):
     for slot, photo in zip(unassigned, remaining):
         assignments[slot["idx"]] = photo
 
-    # Composite each assignment
+    # Composite each assignment — using Pillow for highest quality
+    # Strategy: If photo is larger than slot, only crop (no downscale) to preserve quality
+    from PIL import Image as PILImg
+    bg_pil = PILImg.fromarray(cv2.cvtColor(background, cv2.COLOR_BGR2RGB))
+
     for slot_idx, photo_info in assignments.items():
         slot = slot_layers[slot_idx]
         sx = int(slot["x"] * scale_x)
@@ -376,30 +394,42 @@ async def composite_slots(request: Request):
         sh = int(slot["h"] * scale_y)
 
         photo = photo_info["photo"]
-        ph, pw = photo.shape[:2]
+        photo_pil = PILImg.fromarray(cv2.cvtColor(photo, cv2.COLOR_BGR2RGB))
+        pw, ph = photo_pil.size
+
         slot_aspect = sw / max(sh, 1)
         photo_aspect = pw / max(ph, 1)
 
+        # Calculate the size needed to cover the slot
         if photo_aspect > slot_aspect:
-            new_h = sh
-            new_w = int(sh * photo_aspect)
+            # Photo is wider — fit by height
+            target_h = sh
+            target_w = int(sh * photo_aspect)
         else:
-            new_w = sw
-            new_h = int(sw / photo_aspect) if photo_aspect > 0 else sh
+            # Photo is taller — fit by width
+            target_w = sw
+            target_h = int(sw / photo_aspect) if photo_aspect > 0 else sh
 
-        photo = cv2.resize(photo, (max(new_w, 1), max(new_h, 1)), interpolation=cv2.INTER_LANCZOS4)
-        crop_x = max((new_w - sw) // 2, 0)
-        crop_y = max((new_h - sh) // 2, 0)
-        photo = photo[crop_y:crop_y+sh, crop_x:crop_x+sw]
+        # Only resize if photo is SMALLER than needed (upscale)
+        # If photo is larger, crop from original (no quality loss)
+        if pw < target_w or ph < target_h:
+            # Photo is too small — must upscale (some quality loss unavoidable)
+            photo_pil = photo_pil.resize((max(target_w, 1), max(target_h, 1)), PILImg.LANCZOS)
+        else:
+            # Photo is large enough — resize down to target (preserves quality)
+            photo_pil = photo_pil.resize((max(target_w, 1), max(target_h, 1)), PILImg.LANCZOS)
 
-        # Clamp bounds
-        if sx < 0: sx = 0
-        if sy < 0: sy = 0
-        if sx + sw > bg_w: sw = bg_w - sx
-        if sy + sh > bg_h: sh = bg_h - sy
+        # Center crop to exact slot size
+        crop_x = max((photo_pil.width - sw) // 2, 0)
+        crop_y = max((photo_pil.height - sh) // 2, 0)
+        photo_pil = photo_pil.crop((crop_x, crop_y, crop_x + sw, crop_y + sh))
 
-        if sh > 0 and sw > 0 and photo.shape[0] >= sh and photo.shape[1] >= sw:
-            background[sy:sy+sh, sx:sx+sw] = photo[:sh, :sw]
+        # Paste onto background
+        if sx >= 0 and sy >= 0 and sx + sw <= bg_pil.width and sy + sh <= bg_pil.height:
+            bg_pil.paste(photo_pil, (sx, sy))
+
+    # Convert back for saving
+    background = cv2.cvtColor(np.array(bg_pil), cv2.COLOR_RGB2BGR)
 
     # Save result at full quality with 300 DPI, exact original dimensions
     result_id = uuid.uuid4().hex[:8]
@@ -408,7 +438,7 @@ async def composite_slots(request: Request):
     from PIL import Image as PILImage
     result_rgb = cv2.cvtColor(background, cv2.COLOR_BGR2RGB)
     result_img = PILImage.fromarray(result_rgb)
-    result_img.save(str(result_path), "JPEG", quality=100, dpi=(300, 300))
+    result_img.save(str(result_path), "JPEG", quality=100, dpi=(600, 600))
 
     # Save reference to original PSD for layered download
     import json
@@ -452,6 +482,7 @@ async def adjust_slot(request: Request):
     zoom = float(form.get("zoom", 1.0))
     offset_x = float(form.get("offset_x", 0.0))  # -1 to 1
     offset_y = float(form.get("offset_y", 0.0))  # -1 to 1
+    rotation = float(form.get("rotation", 0.0))  # degrees
 
     # Load existing result
     result_path = OUTPUT_PATH / f"psd_result_{result_id}.jpg"
@@ -481,8 +512,11 @@ async def adjust_slot(request: Request):
     from psd_tools import PSDImage
     psd_file = slot_data.get("psd_file", "")
     psd = PSDImage.open(psd_file)
-    scale_x = 1.0
-    scale_y = 1.0
+
+    # The result image is at 2x PSD resolution
+    SCALE_FACTOR = bg_w / psd.width
+    scale_x = SCALE_FACTOR
+    scale_y = SCALE_FACTOR
 
     sx = int(slot["x"] * scale_x)
     sy = int(slot["y"] * scale_y)
@@ -501,6 +535,20 @@ async def adjust_slot(request: Request):
         raise HTTPException(400, "Invalid photo")
 
     ph, pw = photo.shape[:2]
+
+    # Apply rotation first (if any)
+    if rotation != 0:
+        center = (pw // 2, ph // 2)
+        rot_matrix = cv2.getRotationMatrix2D(center, -rotation, 1.0)
+        # Calculate new bounds after rotation
+        cos = abs(rot_matrix[0, 0])
+        sin = abs(rot_matrix[0, 1])
+        new_pw = int(ph * sin + pw * cos)
+        new_ph = int(ph * cos + pw * sin)
+        rot_matrix[0, 2] += (new_pw - pw) / 2
+        rot_matrix[1, 2] += (new_ph - ph) / 2
+        photo = cv2.warpAffine(photo, rot_matrix, (new_pw, new_ph), borderMode=cv2.BORDER_REFLECT)
+        ph, pw = photo.shape[:2]
 
     # Apply zoom and offset
     slot_aspect = sw / max(sh, 1)
@@ -726,12 +774,12 @@ async def get_psd_result_as_psd(result_id: str, token: str = None):
                             continue
                         bbox = child.bbox
                         w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
-                        if w > 200 and h > 200 and w < psd.width * 0.7 and h < psd.height * 0.7:
+                        if w > 200 and h > 200 and not (w > psd.width * 0.95 and h > psd.height * 0.95):
                             slot_layers.append(child)
                 else:
                     bbox = layer.bbox
                     w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
-                    if w > 200 and h > 200 and w < psd.width * 0.7 and h < psd.height * 0.7:
+                    if w > 200 and h > 200 and not (w > psd.width * 0.95 and h > psd.height * 0.95):
                         slot_layers.append(layer)
 
             # For each slot layer, extract the corresponding region from the result
@@ -883,3 +931,90 @@ async def delete_storage(request: Request):
                 pass
 
     return {"deleted": deleted, "freed_mb": round(freed / 1e6, 1)}
+
+
+@router.post("/psd/move-to-used")
+async def move_to_used(request: Request):
+    """
+    Move photo files from the user's source folder to a 'Used' subfolder.
+    """
+    import shutil
+
+    form = await request.form()
+    filenames_raw = form.get("filenames", "")
+    source_folder = form.get("source_folder", "")
+
+    if not filenames_raw:
+        raise HTTPException(400, "No filenames provided")
+    if not source_folder:
+        raise HTTPException(400, "No source folder provided")
+
+    filenames = [f.strip() for f in filenames_raw.split(",") if f.strip()]
+    source_dir = Path(source_folder)
+
+    if not source_dir.exists():
+        raise HTTPException(404, f"Folder not found: {source_folder}")
+
+    # Create Used subfolder in the source directory
+    used_dir = source_dir / "Used"
+    used_dir.mkdir(exist_ok=True)
+
+    moved = 0
+    not_found = []
+
+    for filename in filenames:
+        src_file = source_dir / filename
+        if src_file.exists():
+            dest_file = used_dir / filename
+            if dest_file.exists():
+                stem = dest_file.stem
+                suffix = dest_file.suffix
+                counter = 1
+                while dest_file.exists():
+                    dest_file = used_dir / f"{stem}_{counter}{suffix}"
+                    counter += 1
+            shutil.move(str(src_file), str(dest_file))
+            moved += 1
+        else:
+            not_found.append(filename)
+
+    return {
+        "moved": moved,
+        "not_found": not_found,
+        "used_folder": str(used_dir),
+    }
+
+
+@router.post("/psd/browse-folder")
+async def browse_folder(request: Request):
+    """
+    List image files in a local folder.
+    Expects: {"folder": "D:/MyPhotos"}
+    """
+    form = await request.form()
+    folder = form.get("folder", "")
+
+    if not folder:
+        raise HTTPException(400, "No folder path provided")
+
+    folder_path = Path(folder)
+    if not folder_path.exists():
+        raise HTTPException(404, f"Folder not found: {folder}")
+
+    image_extensions = {'.jpg', '.jpeg', '.png', '.webp', '.bmp', '.tiff'}
+    files = []
+    for f in sorted(folder_path.iterdir()):
+        if f.is_file() and f.suffix.lower() in image_extensions:
+            files.append({
+                "name": f.name,
+                "size_mb": round(f.stat().st_size / 1e6, 1),
+                "path": str(f),
+            })
+
+    return {
+        "folder": str(folder_path),
+        "files": files,
+        "total": len(files),
+        "has_used_folder": (folder_path / "Used").exists(),
+        "used_count": len(list((folder_path / "Used").iterdir())) if (folder_path / "Used").exists() else 0,
+    }
