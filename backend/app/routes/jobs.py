@@ -269,10 +269,8 @@ async def composite_slots(request: Request):
 
     bg_h, bg_w = background.shape[:2]
 
-    # Upscale background to 2x for higher quality output (zoom to 200% without pixelation)
-    SCALE_FACTOR = 2
-    background = cv2.resize(background, (bg_w * SCALE_FACTOR, bg_h * SCALE_FACTOR), interpolation=cv2.INTER_LANCZOS4)
-    bg_h, bg_w = background.shape[:2]
+    # Keep original PSD dimensions — no upscaling
+    SCALE_FACTOR = 1
 
     # Load PSD to get layer info
     psd_files = list(preview_dir.glob("*.psd"))
@@ -315,9 +313,9 @@ async def composite_slots(request: Request):
     right_slots.sort(key=lambda s: (s["y"], s["x"]))  # left to right for right page
     slot_layers = left_slots + right_slots
 
-    # No scaling — work at 2x PSD resolution for quality
-    scale_x = float(SCALE_FACTOR)
-    scale_y = float(SCALE_FACTOR)
+    # No scaling — work at original PSD resolution
+    scale_x = 1.0
+    scale_y = 1.0
 
     # Place photos with smart orientation matching
     # Collect all uploaded photos and save them to disk for "Move to Used"
@@ -410,14 +408,13 @@ async def composite_slots(request: Request):
             target_w = sw
             target_h = int(sw / photo_aspect) if photo_aspect > 0 else sh
 
-        # Only resize if photo is SMALLER than needed (upscale)
-        # If photo is larger, crop from original (no quality loss)
-        if pw < target_w or ph < target_h:
-            # Photo is too small — must upscale (some quality loss unavoidable)
-            photo_pil = photo_pil.resize((max(target_w, 1), max(target_h, 1)), PILImg.LANCZOS)
-        else:
-            # Photo is large enough — resize down to target (preserves quality)
-            photo_pil = photo_pil.resize((max(target_w, 1), max(target_h, 1)), PILImg.LANCZOS)
+        # Resize to fit slot — preserve original quality
+        photo_pil = photo_pil.resize((max(target_w, 1), max(target_h, 1)), PILImg.LANCZOS)
+
+        # Add 20% smoothness + 10% sharpness
+        from PIL import ImageFilter
+        photo_pil = photo_pil.filter(ImageFilter.GaussianBlur(radius=0.4))
+        photo_pil = photo_pil.filter(ImageFilter.UnsharpMask(radius=1.0, percent=15, threshold=2))
 
         # Center crop to exact slot size
         crop_x = max((photo_pil.width - sw) // 2, 0)
@@ -438,7 +435,7 @@ async def composite_slots(request: Request):
     from PIL import Image as PILImage
     result_rgb = cv2.cvtColor(background, cv2.COLOR_BGR2RGB)
     result_img = PILImage.fromarray(result_rgb)
-    result_img.save(str(result_path), "JPEG", quality=100, dpi=(600, 600))
+    result_img.save(str(result_path), "JPEG", quality=100, dpi=(300, 300))
 
     # Save reference to original PSD for layered download
     import json
